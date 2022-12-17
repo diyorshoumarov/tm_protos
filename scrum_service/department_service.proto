@@ -4,7 +4,6 @@ package scrum_service;
 option go_package="genproto/scrum_service";
 
 import "priority_history_service.proto";
-import "developer_service.proto";
 import "google/protobuf/empty.proto";
 
 service DepartmentService {
@@ -45,10 +44,16 @@ message DepartmentList {
 }
 
 message DepartmentFull {
+    message Developer {
+        string id = 1;
+        string department_id = 2;
+        string user_id = 3;
+        int32 given = 4;
+    }
     string id = 1;
     string worklaod_id = 2;
     string project_id = 3;
     string role_id = 4;
     int32 plan = 5;
-    repeated DeveloperFull developers = 6;
+    repeated Developer developers = 6;
 }

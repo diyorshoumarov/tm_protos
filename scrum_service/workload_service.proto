@@ -3,7 +3,6 @@ syntax="proto3";
 package scrum_service;
 option go_package="genproto/scrum_service";
 
-import "priority_history_service.proto";
 import "google/protobuf/empty.proto";
 
 service WorkloadService {
@@ -46,6 +45,27 @@ message WorkloadList {
 }
 
 message WorkloadFull {
+    message PriorityHistoryFull {
+        message DepartmentFull {
+            message Developer {
+                string id = 1;
+                string department_id = 2;
+                string user_id = 3;
+                int32 given = 4;
+            }
+            string id = 1;
+            string worklaod_id = 2;
+            string project_id = 3;
+            string role_id = 4;
+            int32 plan = 5;
+            repeated Developer developers = 6;
+        }
+        string id = 1;
+        string workload_id = 2;
+        string project_id = 3;
+        int32 order_number = 4;
+        repeated DepartmentFull departments = 5;
+    }
     string id = 1;
     string from_date = 2;
     string to_date = 3;

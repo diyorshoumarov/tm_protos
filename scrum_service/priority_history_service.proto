@@ -4,7 +4,6 @@ package scrum_service;
 option go_package="genproto/scrum_service";
 
 import "workload_service.proto";
-import "department_service.proto";
 import "google/protobuf/empty.proto";
 
 service PriorityHistoryService {
@@ -42,6 +41,20 @@ message PriorityHistoryList {
 }
 
 message PriorityHistoryFull {
+    message DepartmentFull {
+        message Developer {
+            string id = 1;
+            string department_id = 2;
+            string user_id = 3;
+            int32 given = 4;
+        }
+        string id = 1;
+        string worklaod_id = 2;
+        string project_id = 3;
+        string role_id = 4;
+        int32 plan = 5;
+        repeated Developer developers = 6;
+    }
     string id = 1;
     string workload_id = 2;
     string project_id = 3;
