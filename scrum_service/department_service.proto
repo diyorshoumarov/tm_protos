@@ -21,19 +21,19 @@ message Department {
     string worklaod_id = 2;
     string project_id = 3;
     string role_id = 4;
-    int32 given = 5;
+    int32 plan = 5;
 }
 
 message CreateDepartmentRequest {
     string worklaod_id = 2;
     string project_id = 3;
     string role_id = 4;
-    int32 given = 5;
+    int32 plan = 5;
 }
 
 message UpdateDepartmentRequest {
     string id = 1;
-    int32 given = 5;
+    int32 plan = 5;
 }
 
 message DepartmentPrimaryKey {
@@ -49,6 +49,6 @@ message DepartmentFull {
     string worklaod_id = 2;
     string project_id = 3;
     string role_id = 4;
-    int32 given = 5;
+    int32 plan = 5;
     repeated DeveloperFull developers = 6;
 }
